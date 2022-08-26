@@ -29,9 +29,9 @@ model Movie {
 }
 
 model MovieRent {
-  user    User   @relation("user", fields: [userId], references: [id])
+  user    User   @relation("user", fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId  String
-  movie   Movie  @relation("movie", fields: [movieId], references: [id])
+  movie   Movie  @relation("movie", fields: [movieId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   movieId String
 
   @@id([userId, movieId])
