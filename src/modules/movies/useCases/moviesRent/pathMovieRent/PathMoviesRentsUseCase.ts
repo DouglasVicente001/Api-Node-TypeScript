@@ -62,7 +62,7 @@ export class PathMoviesRentsUseCase {
         const result = 'Completed edition'
         return result
     }catch{
-        return response.status("rent not found, does this rent exist?", 404)
+        return response.status(404)
     }
     }
 }

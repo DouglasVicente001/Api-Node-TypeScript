@@ -37,3 +37,12 @@ model MovieRent {
   @@id([userId, movieId])
   @@map("movie_rent")
 }
+model Usuario {
+  id String @id @default(uuid())
+  email String @unique
+  senha String
+  criado_em DateTime @default(now())
+  modificado_em DateTime @updatedAt
+
+  @@map("usuarios")
+}
